@@ -1,0 +1,357 @@
+ATHULS 
+ROLL NO: 114
+
+--------------------------------------------------------------------------------------------------------------------------------------
+MATRIX MULTIPLICATION
+
+import java.io.*;
+import java.util.*;
+class Matrix
+{
+	public static void main(String st[])
+	{
+	  int a[][]=new int[10][10],b[][]=new int[10][10],c[][]=new int[10][10];
+	  Scanner sc=new Scanner(System.in);
+	  System.out.println("Enter no of rows and column of 1st matrix:");
+	  int r1=sc.nextInt();
+	  int c1=sc.nextInt();
+	 
+	  System.out.println("Enter no of rows and column of 2nd matrix:");
+	  int r2=sc.nextInt();
+	  int c2=sc.nextInt();
+	  
+	  if(c1==r2)
+	  {
+	  	 System.out.println("Enter elements of 1st matrix:");
+		  for(int i=0;i<r1;i++)
+		  {
+		  	for(int j=0;j<c1;j++)
+		  		a[i][j]=sc.nextInt();
+		  }
+	  	System.out.println("Enter elements of 2nd matrix:");
+		for(int i=0;i<r2;i++)
+		  {
+		  	for(int j=0;j<c2;j++)
+		  		b[i][j]=sc.nextInt();
+		  }
+	  	for(int i=0;i<r1;i++)
+	  		for(int j=0;j<c2;j++)
+	  			for(int k=0;k<r2;k++)
+	  			{
+	  				c[i][j]+=a[i][k]*b[k][j];
+	  			}
+	  	System.out.println("Multipiled matrix:");
+	  	for(int i=0;i<r1;i++)
+	 	{
+	  		for(int j=0;j<c2;j++){
+	  			System.out.print(c[i][j] +"    ");
+	  			}
+	  		System.out.println();
+	  	}
+	  }
+	  else
+	  	 System.out.println("Multiplication is not posible");
+	}
+}
+
+
+OUTPUT:
+
+
+Enter no of rows and column of 1st matrix:
+2 2
+Enter no of rows and column of 2nd matrix:
+2 2
+Enter elements of 1st matrix:
+1 2
+3 2
+Enter elements of 2nd matrix:
+1 2
+3 2
+Multipiled matrix:
+7    6    
+9    10    
+
+
+
+
+STACK 
+
+import java.io.*;
+import java.util.Scanner;
+class stack{
+int top,n,e;
+int []arr;
+public void create(int e){
+ n=e;
+ arr=new int[e];
+top=-1;
+}
+ public void push(int value)
+	{ 
+ 	 if (top==n-1)
+	  { 
+ 		System.out.println("Stack is full");
+	  }
+	else
+	 { 
+	     arr[++top]=value;
+	    System.out.println("pushed element :"+value);
+	 }
+       } 
+ public void pop()
+   { 
+     if(top==-1)
+      { 
+         System.out.println("Stack is Empty");
+       }
+      else 
+ 	{ 
+   System.out.println("popped element:"+arr[top]);
+    top--;
+   }
+  }
+ public void display()
+    {
+     if (top==-1)
+       { 
+        System.out.println("stack is empty");
+       }
+     else{
+      System.out.println("Stack elements are: ");
+      for(int i=0;i<=top;i++)
+            System.out.println(arr[i]);
+    } 
+   }
+ public void peek()
+  {
+    if(top==-1)
+    System.out.println("Stack is empty");
+  else
+    System.out.println("Top element:"+arr[top]);
+  } 
+ public static void main(String args[])
+{ stack s=new stack();
+  Scanner sc =new Scanner(System.in);
+  int value,e,ch=0;
+ while(ch!=6){
+ System.out.println("\n1.create \n 2.push \n 3.pop \n 4.peek \n 5.display \n 6.Exit \n Enter your choice");
+ ch=sc.nextInt();
+
+  switch(ch)
+  { 
+  case 1:
+          System.out.println("Enter the no of elements\n");
+          e=sc.nextInt();
+          s.create(e);
+            break;
+   case 2: System.out.println("Enter the element ");
+           value=sc.nextInt();
+          s.push(value);
+        break;
+  case 3: s.pop();
+          break;
+  case 4: s.peek();
+         break;
+  case 5: s.display();
+         break;
+  case 6: break;
+  default:System.out.println("Invalid ");
+    break;
+ }
+}
+}}
+
+OUTPUT
+
+1.create 
+ 2.push 
+ 3.pop 
+ 4.peek 
+ 5.display 
+ 6.Exit 
+ Enter your choice
+1
+Enter the no of elements
+
+5
+
+1.create 
+ 2.push 
+ 3.pop 
+ 4.peek 
+ 5.display 
+ 6.Exit 
+ Enter your choice
+2
+Enter the element 
+10
+pushed element :10
+
+
+1.create 
+ 2.push 
+ 3.pop 
+ 4.peek 
+ 5.display 
+ 6.Exit 
+ Enter your choice
+2
+Enter the element 
+11
+pushed element :11
+
+1.create 
+ 2.push 
+ 3.pop 
+ 4.peek 
+ 5.display 
+ 6.Exit 
+ Enter your choice
+2
+Enter the element 
+13
+pushed element :13
+
+1.create 
+ 2.push 
+ 3.pop 
+ 4.peek 
+ 5.display 
+ 6.Exit 
+ Enter your choice
+2
+Enter the element 
+44
+pushed element :44
+
+1.create 
+ 2.push 
+ 3.pop 
+ 4.peek 
+ 5.display 
+ 6.Exit 
+ Enter your choice
+2
+Enter the element 
+55
+pushed element :55
+
+1.create 
+ 2.push 
+ 3.pop 
+ 4.peek 
+ 5.display 
+ 6.Exit 
+ Enter your choice
+2
+Enter the element 
+66
+Stack is full
+
+1.create 
+ 2.push 
+ 3.pop 
+ 4.peek 
+ 5.display 
+ 6.Exit 
+ Enter your choice
+5
+Stack elements are: 
+10
+11
+13
+44
+55
+1.create 
+ 2.push 
+ 3.pop 
+ 4.peek 
+ 5.display 
+ 6.Exit 
+ Enter your choice
+3
+popped element:55
+
+1.create 
+ 2.push 
+ 3.pop 
+ 4.peek 
+ 5.display 
+ 6.Exit 
+ Enter your choice
+5
+Stack elements are: 
+10
+11
+13
+44
+
+1.create 
+ 2.push 
+ 3.pop 
+ 4.peek 
+ 5.display 
+ 6.Exit 
+ Enter your choice
+4
+Top element:44
+
+1.create 
+ 2.push 
+ 3.pop 
+ 4.peek 
+ 5.display 
+ 6.Exit 
+ Enter your choice
+3
+popped element:44
+
+1.create 
+ 2.push 
+ 3.pop 
+ 4.peek 
+ 5.display 
+ 6.Exit 
+ Enter your choice
+3
+popped element:13
+
+1.create 
+ 2.push 
+ 3.pop 
+ 4.peek 
+ 5.display 
+ 6.Exit 
+ Enter your choice
+3
+popped element:11
+
+1.create 
+ 2.push 
+ 3.pop 
+ 4.peek 
+ 5.display 
+ 6.Exit 
+ Enter your choice
+3
+popped element:10
+
+1.create 
+ 2.push 
+ 3.pop 
+ 4.peek 
+ 5.display 
+ 6.Exit 
+ Enter your choice
+3
+Stack is Empty
+
+1.create 
+ 2.push 
+ 3.pop 
+ 4.peek 
+ 5.display 
+ 6.Exit 
+Enter your choice 6
+
